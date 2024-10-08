@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="page_css.css">
+    <title>Smartmove</title>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul class="ul_nav">
+                <li class="li_nav">
+                    <a href="main.html" class="nav_link">
+                        <img src="img/boussole.svg" class='img_nav' alt="boussole">
+                        <p>Itinéraire</p>
+                    </a>
+                </li>
+                <li class="li_nav">
+                    <a href="covoiturage.html" class="nav_link">
+                        <img src="img/voiture.svg" class='img_nav' alt="voiture">
+                        <p>Covoiturage</p>
+                    </a>
+                </li>
+                <li class="li_nav">
+                    <a href="enregistres.html" class="nav_link">
+                        <img src="img/ordi.svg" class='img_nav' alt="ordi">
+                        <p>Enregistrés</p>
+                    </a>
+                </li>
+                <li class="li_nav">
+                    <a href="actu.html" class="nav_link">
+                        <img src="img/journal.svg" class='img_nav' alt="journal">
+                        <p>Actualités</p>
+                    </a>
+                </li>
+                <li class="li_nav">
+                    <a href="assistant.html" class="nav_link">
+                        <img src="img/ia_bot.svg" class='img_nav' alt="ia_bot">
+                        <p>Assistant IA</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="search-container">
+        <button class="menu-btn">
+            <img src="img/menu.svg" alt="menu" class="menu-icon">
+        </button>
+    </div>
+
+    <h1 class="title_covoi">Découvrir le Covoiturage</h1>
+
+    <!-- Section pour ajouter une nouvelle annonce de covoiturage -->
+    <section class="add-carpool">
+        <h2 class="sous_title_covoi">Ajouter une Annonce</h2>
+        <form id="carpoolForm">
+            <div class="form-group">
+                <label for="from">Départ :</label>
+                <input type="text" id="from" placeholder="Adresse de départ">
+            </div>
+            <div class="form-group">
+                <label for="to">Destination :</label>
+                <input type="text" id="to" placeholder="Adresse de destination">
+            </div>
+            <div class="form-group">
+                <label for="date">Date :</label>
+                <input type="date" id="date">
+            </div>
+            <div class="form-group">
+                <label for="time">Heure :</label>
+                <input type="time" id="time">
+            </div>
+            <div class="form-group">
+                <button type="button" id="addButton">Ajouter l'annonce</button>
+            </div>
+        </form>
+    </section>
+
+    <section>
+        <h2 class="sous_title_covoi2">Annonces de covoiturage</h2>
+        <ul id="carpoolList">
+            <!-- Les annonces de covoiturage apparaîtront ici -->
+        </ul>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

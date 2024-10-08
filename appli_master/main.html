@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7XJUJkluv1hw-5CA0eplAG10BvbHX-vA&callback=console.debug&libraries=maps,marker&v=beta">
+    </script>
+    <link rel="stylesheet" href="page_css.css">
+    <title>Smartmove</title>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul class="ul_nav">
+                <li class="li_nav">
+                    <a href="main.html" class="nav_link">
+                        <img src="img/boussole.svg" class='img_nav' alt="boussole">
+                        <p>Itinéraire</p>
+                    </a>
+                </li>
+                <li class="li_nav">
+                    <a href="covoiturage.html" class="nav_link">
+                        <img src="img/voiture.svg" class='img_nav' alt="voiture">
+                        <p>Covoiturage</p>
+                    </a>
+                </li>
+                <li class="li_nav">
+                    <a href="enregistres.html" class="nav_link">
+                        <img src="img/ordi.svg" class='img_nav' alt="ordi">
+                        <p>Enregistrés</p>
+                    </a>
+                </li>
+                <li class="li_nav">
+                    <a href="actu.html" class="nav_link">
+                        <img src="img/journal.svg" class='img_nav' alt="journal">
+                        <p>Actualités</p>
+                    </a>
+                </li>
+                <li class="li_nav">
+                    <a href="assistant.html" class="nav_link">
+                        <img src="img/ia_bot.svg" class='img_nav' alt="ia_bot">
+                        <p>Assistant IA</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="form-container">
+        <input type="text" id="origin" placeholder="Adresse d'origine" />
+        <input type="text" id="destination" placeholder="Adresse de destination" />
+        <button id="getDirections">Obtenir l'itinéraire</button>
+
+        <div id="map"></div>
+
+    </div>
+
+    <h3>Itinéraire en voiture :</h3>
+    <div id="drivingDirectionsPanel"></div>
+
+    <h3>Itinéraire en transports en commun :</h3>
+    <div id="transitDirectionsPanel"></div>
+
+    <div class="info-bar">
+        <div class="info">
+            <p>Température</p>
+            <p>14°C</p>
+        </div>
+        <div class="info">
+            <p>Qualité de l'air</p>
+            <p>Moyen</p>
+        </div>
+        <div class="info">
+            <p>Précision</p>
+            <p>80%</p>
+        </div>
+        <div class="info">
+            <p>Humidité</p>
+            <p>62%</p>
+        </div>
+    </div>
+
+    <!-- <script src="script.js"></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7XJUJkluv1hw-5CA0eplAG10BvbHX-vA&libraries=places"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

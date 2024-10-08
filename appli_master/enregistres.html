@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="page_css.css">
+    <title>Smartmove</title>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul class="ul_nav">
+                <li class="li_nav">
+                    <a href="main.html" class="nav_link">
+                        <img src="img/boussole.svg" class='img_nav' alt="boussole">
+                        <p>Itinéraire</p>
+                    </a>
+                </li>
+                <li class="li_nav">
+                    <a href="covoiturage.html" class="nav_link">
+                        <img src="img/voiture.svg" class='img_nav' alt="voiture">
+                        <p>Covoiturage</p>
+                    </a>
+                </li>
+                <li class="li_nav">
+                    <a href="enregistres.html" class="nav_link">
+                        <img src="img/ordi.svg" class='img_nav' alt="ordi">
+                        <p>Enregistrés</p>
+                    </a>
+                </li>
+                <li class="li_nav">
+                    <a href="actu.html" class="nav_link">
+                        <img src="img/journal.svg" class='img_nav' alt="journal">
+                        <p>Actualités</p>
+                    </a>
+                </li>
+                <li class="li_nav">
+                    <a href="assistant.html" class="nav_link">
+                        <img src="img/ia_bot.svg" class='img_nav' alt="ia_bot">
+                        <p>Assistant IA</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="search-container">
+        <button class="menu-btn">
+            <img src="img/menu.svg" alt="menu" class="menu-icon">
+        </button>
+    </div>
+
+    <div class="title_page_enregistrer">
+        <h2>Mes Adresses Favorites</h2>
+    </div>
+    <main class="page_enregistres">
+        <div class="add-address-container">
+            <input type="text" id="addressInput" placeholder="Entrez une adresse...">
+            <button class="add-button" onclick="addAddress()">+</button>
+        </div>
+        <div class="address-list">
+            <h4>Adresses Enregistrées</h4>
+            <ul id="addressList">
+                <!-- Les adresses seront ajoutées ici dynamiquement -->
+            </ul>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

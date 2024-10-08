@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="page_css.css">
+    <title>Smartmove</title>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul class="ul_nav">
+                <li class="li_nav">
+                    <a href="main.html" class="nav_link">
+                        <img src="img/boussole.svg" class='img_nav' alt="boussole">
+                        <p>Itinéraire</p>
+                    </a>
+                </li>
+                <li class="li_nav">
+                    <a href="covoiturage.html" class="nav_link">
+                        <img src="img/voiture.svg" class='img_nav' alt="voiture">
+                        <p>Covoiturage</p>
+                    </a>
+                </li>
+                <li class="li_nav">
+                    <a href="enregistres.html" class="nav_link">
+                        <img src="img/ordi.svg" class='img_nav' alt="ordi">
+                        <p>Enregistrés</p>
+                    </a>
+                </li>
+                <li class="li_nav">
+                    <a href="actu.html" class="nav_link">
+                        <img src="img/journal.svg" class='img_nav' alt="journal">
+                        <p>Actualités</p>
+                    </a>
+                </li>
+                <li class="li_nav">
+                    <a href="assistant.html" class="nav_link">
+                        <img src="img/ia_bot.svg" class='img_nav' alt="ia_bot">
+                        <p>Assistant IA</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="search-container">
+        <button class="menu-btn">
+            <img src="img/menu.svg" alt="menu" class="menu-icon">
+        </button>
+    </div>
+
+    <h1 class="title_bot">Assistant IA</h1>
+
+    <!-- Champ de texte pour la position actuelle -->
+    <input type="text" id="currentLocation" placeholder="Où vous trouvez-vous ?" style="width: 300px; padding: 10px; margin-bottom: 10px;">
+
+    <!-- Champ de texte pour l'utilisateur -->
+    <input type="text" id="userInput" placeholder="Où allons-nous ?" style="width: 300px; padding: 10px; margin-bottom: 10px;">
+
+    <!-- Bouton pour générer la réponse -->
+    <button id="generateBtn">Rechercher le meilleur itinéraire</button>
+    
+    <!-- Conteneur pour afficher la réponse générée -->
+    <div id="responseContainer" style="margin-top: 20px;"></div>
+
+    <script src="gemini.js"></script>
+</body>
+
+</html>

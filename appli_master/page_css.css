@@ -1,0 +1,597 @@
+/* Réinitialisation */
+* {
+    margin: 0;
+    box-sizing: border-box; /* Inclure padding et border dans la largeur/hauteur */
+}
+
+body {
+    margin: 0; /* Supprimer la marge par défaut du body */
+    padding: 0; /* Supprimer le padding par défaut du body */
+    overflow-x: hidden; /* Cacher le débordement horizontal */
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pour que les éléments en bas soient bien placés */
+}
+
+a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.75)
+}
+.place-picker-container {
+    padding: 20px;
+  }
+/* Conteneur pour la carte */
+.map-container {
+    position: relative; /* Ajout de position relative */
+    flex-grow: 1;
+    z-index: 1;
+}
+
+.search-container {
+    background-color: rgb(243 231 255);
+    padding: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center; /* Centrer verticalement les éléments */
+    width: 100%;
+    z-index: 2;
+}
+
+.menu-btn {
+    background: none; /* Pas de fond pour le bouton */
+    border: none; /* Pas de bordure */
+    cursor: pointer; /* Curseur en forme de main */}
+
+.menu-icon {
+    width: 34px; /* Taille de l'icône */
+    height: 34px;
+}
+
+.search-bar {
+    display: flex;
+    width: 100%; /* Ajuster pour remplir l'espace restant */
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+}
+
+.search-bar .search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search-bar .search-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Conteneur pour la carte */
+.map-container {
+    height: calc(107vh - 180px); /* La carte occupe l'espace entre la barre de recherche et les autres éléments */
+    z-index: 1;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Barre d'informations en bas */
+.info-bar {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    margin-top: 5px;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 2; /* La barre d'infos reste visible au-dessus de la carte */
+    height: 50px; /* Ajout d'une hauteur fixe pour que la barre soit visible */
+}
+
+/* Barre de navigation en bas */
+.nav {
+    position: fixed;
+    bottom: 0;
+    padding: 5px;
+    width: 100%;
+    background-color: rgb(243 231 255);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 3; /* La barre de navigation est au-dessus des autres éléments */
+}
+
+.ul_nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.ul_nav li:last-child {
+    margin-right: 10px;
+}
+
+.li_nav {
+    text-align: center;
+}
+
+.nav_link {
+    text-decoration: none;
+    color: inherit; /* Pour que la couleur des liens hérite du style actuel */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img_nav {
+    width: 30px;
+    height: 30px;
+}
+
+.li_nav p {
+    margin: 5px 0 0 0;
+    font-size: 12px;
+}
+
+.actu-container {
+    background-color: #f9f9f9; /* Couleur de fond pour la section */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 60px 0; /* Espace autour de la section */
+}
+
+.actu-container h2 {
+    margin-bottom: 15px; /* Espace sous le titre */
+}
+
+.article {
+    display: flex; /* Utilisation de flexbox pour l'alignement */
+    background-color: #ffffff; /* Couleur de fond pour chaque article */
+    padding: 15px;
+    margin-bottom: 10px; /* Espace entre les articles */
+    border-radius: 6px;
+    cursor: pointer; /* Curseur en forme de main pour indiquer qu'il est cliquable */
+    transition: background-color 0.3s; /* Transition pour l'effet au survol */
+}
+
+.article:hover {
+    background-color: #f0f0f0; /* Couleur de fond au survol */
+}
+
+.article-img {
+    width: 80px; /* Largeur de l'image */
+    height: 80px; /* Hauteur de l'image */
+    margin-right: 15px; /* Espace à droite de l'image */
+    border-radius: 4px; /* Coins arrondis pour l'image */
+}
+
+.article-content {
+    flex: 1; /* Permet au contenu de prendre tout l'espace restant */
+}
+
+.article-content h3 {
+    margin: 0 0 5px 0; /* Espace sous le titre de l'article */
+}
+
+.article-content p {
+    margin: 0; /* Suppression des marges par défaut */
+}
+
+.title_page_enregistrer{
+    margin-top: 70px;
+    text-align: center;
+}
+
+.page_enregistres {
+    margin-top: 20px;
+}
+
+/* Conteneur pour ajouter une adresse */
+.add-address-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.add-address-container input {
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    width: 70%;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.add-button {
+    margin-right: 10px;
+    background-color: #4CAF50; /* Couleur verte */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-button:hover {
+    background-color: #45a049; /* Couleur verte plus foncée au survol */
+}
+
+/* Liste des adresses */
+.address-list {
+    padding: 20px;
+}
+
+.address-list h2 {
+    margin-bottom: 15px;
+}
+
+/* Style des adresses enregistrées */
+#addressList {
+    margin-top: 20px;
+    list-style-type: none; /* Pas de puces */
+    display: flex;
+    flex-wrap: wrap; /* Pour que les adresses s'adaptent à la largeur de l'écran */
+    gap: 20px; /* Espacement entre les adresses */
+}
+
+.address-list li {
+    background-color: #f6deef;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.address-list li:hover {
+    transform: scale(1.05); /* Agrandir légèrement au survol */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.address-text {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Icône de suppression (optionnel) */
+.delete-icon {
+    margin-left: 10px;
+    background-color: #ff4444; /* Couleur rouge */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-icon:hover {
+    background-color: #ff2222; /* Couleur rouge plus foncée au survol */
+}
+
+
+
+/* covoiturage  */
+
+.title_covoi {
+    text-align: center;
+    color: #333;
+    font-size: 28px;
+    margin-top: 75px;
+}
+
+.sous_title_covoi {
+    font-size: 24px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.sous_title_covoi2 {
+    text-align: center;
+    font-size: 24px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Formulaire d'ajout d'annonce */
+.add-carpool {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+input[type="text"], input[type="date"], input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.button_covoi {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button_covoi:hover {
+    background-color: #218838;
+}
+
+/* Liste des annonces de covoiturage */
+.carpool-list {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ul_covoi {
+    list-style-type: none;
+}
+
+.ul_covoi li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.ul_covoi li:last-child {
+    border-bottom: none;
+}
+
+.ul_covoi li .carpool-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.carpool-info span {
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 14px;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+
+
+/* ASSISTANT IA  */
+
+.chat-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.chat-box {
+    flex-grow: 1;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.chat-input-container {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+#userInput {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    margin-left: 10%;
+}
+
+#currentLocation {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    margin-left: 10%;
+}
+
+#sendBtn {
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#sendBtn:hover {
+    background-color: #218838;
+}
+
+.message {
+    margin: 5px 0;
+}
+
+.user-message {
+    text-align: right;
+}
+
+.assistant-message {
+    text-align: left;
+}
+
+.form-container {
+    background-color: rgb(243 231 255);
+    padding: 10px;
+}
+
+.form-container input {
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-container button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #218838;
+}
+
+#map {
+    width: 100%;
+    height: 516px;
+    margin-top: 20px;
+}
+
+.title_bot {
+    text-align: center;
+    color: #333;
+    font-size: 28px;
+    margin-top: 75px;
+    margin-bottom: 15px;
+}
+
+#directionsPanel {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#generateBtn {
+    background-color: #4CAF50; /* Vert */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 80%;
+    margin-left: 10%;
+}
+
+/* Effet au survol */
+#generateBtn:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* Agrandit légèrement le bouton */
+}
+
+/* Effet à l'enfoncement (quand on clique) */
+#generateBtn:active {
+    background-color: #3e8e41;
+    transform: scale(0.98); /* Réduit légèrement pour un effet d'enfoncement */
+}
+
+/* Option pour ajouter une ombre au bouton */
+#generateBtn {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus pour l'accessibilité */
+#generateBtn:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(33, 150, 243, 0.6); /* Accentue le focus pour les utilisateurs de clavier */
+}
+
+.reponse_bot {
+    padding: 0 15px;
+}
