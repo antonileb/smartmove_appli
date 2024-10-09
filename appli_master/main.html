@@ -45,6 +45,21 @@
             </ul>
         </nav>
     </header>
+
+    <div class="app-main" id="parent">
+        <div class="header">
+            <h4>Prévision météo</h4>
+        </div>
+        <div class="searchInputBox">
+            <input type="text" name="" id="input-box" class="input-box" placeholder="entrer une ville">
+        </div>
+        <div class="weather-body" id="weather-body">
+            <!-- weather-body will be append through JavaScript -->
+        </div>
+            
+    </div>
+    
+
     <div class="form-container">
         <input type="text" id="origin" placeholder="Adresse d'origine" />
         <input type="text" id="destination" placeholder="Adresse de destination" />
@@ -54,34 +69,14 @@
 
     </div>
 
-    <h3>Itinéraire en voiture :</h3>
+    <h3 class="itinéraire_propal">Itinéraire en voiture :</h3>
     <div id="drivingDirectionsPanel"></div>
 
-    <h3>Itinéraire en transports en commun :</h3>
+    <h3 class="itinéraire_propal">Itinéraire en transports en commun :</h3>
     <div id="transitDirectionsPanel"></div>
 
-    <div class="info-bar">
-        <div class="info">
-            <p>Température</p>
-            <p>14°C</p>
-        </div>
-        <div class="info">
-            <p>Qualité de l'air</p>
-            <p>Moyen</p>
-        </div>
-        <div class="info">
-            <p>Précision</p>
-            <p>80%</p>
-        </div>
-        <div class="info">
-            <p>Humidité</p>
-            <p>62%</p>
-        </div>
-    </div>
-
-    <!-- <script src="script.js"></script> -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7XJUJkluv1hw-5CA0eplAG10BvbHX-vA&libraries=places"></script>
-    <script src="scripts.js"></script>
+    <script src="map.js"></script>
+    <script src="meteo.js"></script>
 </body>
 
 </html>

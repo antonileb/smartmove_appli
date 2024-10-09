@@ -199,12 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
-// MAP 
-
-
-
-
 // Charger les adresses lorsque la page est chargée
 window.onload = loadAddresses;
 // // Charger les annonces de covoiturage au chargement de la page
