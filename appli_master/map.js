@@ -1,8 +1,8 @@
 // Initialise la carte Google Maps et les services Directions
 function initMap() {
     const map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 7,
-        center: { lat: 48.8566, lng: 2.3522 } // Paris comme centre initial
+        zoom: 14,
+        center: { lat: 48.767, lng: 2.266 } 
     });
 
     const directionsService = new google.maps.DirectionsService();
@@ -36,6 +36,8 @@ function initMap() {
         }
     });
 }
+
+
 
 // Fonction pour calculer et afficher l'itinéraire
 function calculateAndDisplayRoute(directionsService, renderer, origin, destination, mode) {
