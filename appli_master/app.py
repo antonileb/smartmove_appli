@@ -6,7 +6,7 @@ app = Flask(__name__)
 CORS(app)  # Permettre toutes les origines
 
 # Configurer l'API de Google Generative AI
-genai.configure(api_key="your-api-key")
+genai.configure(api_key="your-api-key2")
 
 @app.route('/generate', methods=['POST'])
 def generate_poem():
@@ -24,3 +24,7 @@ def generate_poem():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+

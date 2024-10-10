@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script async src="https://maps.googleapis.com/maps/api/js?key=your-api-key&callback=console.debug&libraries=maps,marker&v=beta">
-    </script>
     <link rel="stylesheet" href="page_css.css">
     <title>Smartmove</title>
 </head>
@@ -74,6 +72,9 @@
 
     <h3 class="itinéraire_propal">Itinéraire en transports en commun :</h3>
     <div id="transitDirectionsPanel"></div>
+
+    <!-- Charger l'API Google Maps avec la bibliothèque Places -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=your-api-key&libraries=places,maps,marker&callback=initMap"></script>
 
     <script src="map.js"></script>
     <script src="meteo.js"></script>

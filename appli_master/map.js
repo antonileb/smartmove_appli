@@ -1,26 +1,38 @@
-// Initialise la carte Google Maps et les services Directions
+// La fonction initMap sera appelée une fois l'API Google Maps chargée
 function initMap() {
+    // Initialiser la carte
     const map = new google.maps.Map(document.getElementById('map'), {
         zoom: 14,
         center: { lat: 48.767, lng: 2.266 } 
     });
 
+    // Initialiser Autocomplete pour le champ "origin"
+    const originInput = document.getElementById("origin");
+    const autocompleteOrigin = new google.maps.places.Autocomplete(originInput, {
+        componentRestrictions: { country: "fr" },
+        fields: ["address_components", "geometry", "icon", "name"]
+    });
+
+    // Initialiser Autocomplete pour le champ "destination"
+    const destinationInput = document.getElementById("destination");
+    const autocompleteDestination = new google.maps.places.Autocomplete(destinationInput, {
+        componentRestrictions: { country: "fr" },
+        fields: ["address_components", "geometry", "icon", "name"]
+    });
+
+    // Configuration des services Directions
     const directionsService = new google.maps.DirectionsService();
-    
-    // Crée deux rendus d'itinéraire
+
     const drivingRenderer = new google.maps.DirectionsRenderer({
-        polylineOptions: { strokeColor: 'blue' }, // Ligne bleue pour voiture
-        suppressMarkers: false
+        polylineOptions: { strokeColor: 'blue' }
     });
     const transitRenderer = new google.maps.DirectionsRenderer({
-        polylineOptions: { strokeColor: 'green' }, // Ligne verte pour transports en commun
-        suppressMarkers: false
+        polylineOptions: { strokeColor: 'green' }
     });
 
     drivingRenderer.setMap(map);
     transitRenderer.setMap(map);
 
-    // Afficher les résultats dans deux sections différentes
     drivingRenderer.setPanel(document.getElementById('drivingDirectionsPanel'));
     transitRenderer.setPanel(document.getElementById('transitDirectionsPanel'));
 
@@ -37,26 +49,18 @@ function initMap() {
     });
 }
 
-
-
 // Fonction pour calculer et afficher l'itinéraire
 function calculateAndDisplayRoute(directionsService, renderer, origin, destination, mode) {
-    directionsService.route(
-        {
-            origin: origin,
-            destination: destination,
-            travelMode: mode,  // Mode de transport
-            provideRouteAlternatives: false,
-        },
-        (response, status) => {
-            if (status === 'OK') {
-                renderer.setDirections(response);
-            } else {
-                alert('Impossible de récupérer l\'itinéraire pour ' + mode + ' : ' + status);
-            }
+    directionsService.route({
+        origin: origin,
+        destination: destination,
+        travelMode: mode,
+        provideRouteAlternatives: false,
+    }, (response, status) => {
+        if (status === 'OK') {
+            renderer.setDirections(response);
+        } else {
+            alert('Impossible de récupérer l\'itinéraire pour ' + mode + ' : ' + status);
         }
-    );
+    });
 }
-
-// Charger la carte et les services Directions lorsque la page est prête
-window.onload = initMap;
